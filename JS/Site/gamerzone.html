@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gamer Zone — Componentes de PC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#" data-go="home">
+      <span class="badge">GZ</span>
+      <span class="mark">Gamer<em>Zone</em></span>
+    </a>
+
+    <form class="searchbar" onsubmit="return go('busca')">
+      <input type="search" placeholder="Buscar por placa de vídeo, processador, gabinete...">
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div class="acts">
+      <button class="icon-btn">Entrar</button>
+      <button class="icon-btn" data-go="carrinho">Carrinho <span class="count">3</span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="cats">
+  <div class="wrap">
+    <a href="#" data-go="busca">Processadores</a>
+    <a href="#" data-go="busca">Placas de vídeo</a>
+    <a href="#" data-go="busca">Placas-mãe</a>
+    <a href="#" data-go="busca">Memória RAM</a>
+    <a href="#" data-go="busca">Armazenamento</a>
+    <a href="#" data-go="busca">Fontes</a>
+    <a href="#" data-go="busca">Gabinetes</a>
+    <a href="#" data-go="busca">Refrigeração</a>
+    <a href="#" data-go="busca">Periféricos</a>
+    <a href="#" data-go="busca">Monitores</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="home" class="view active">
+  <div class="hero">
+    <div>
+      <h1>Monte a máquina<br>que você sempre quis</h1>
+      <p>O maior marketplace de componentes para PC gamer do Brasil. Hardware de ponta, preços competitivos.</p>
+      <a class="btn" href="#" data-go="busca">Ver catálogo</a>
+    </div>
+    <div class="art">
+      <img src="img/LOGO.png" alt="">
+    </div>
+  </div>
+
+  <div class="sec-head">
+    <h2>Destaques da semana</h2>
+    <a href="#" data-go="busca">Ver todos</a>
+  </div>
+
+  <div class="grid" id="destaques">
+    <article class="card">
+      <div class="thumb">imagem</div>
+      <span class="tag">Categoria</span>
+      <h3>Nome do produto</h3>
+      <div class="price">R$ 0.000<small>em até 12x sem juros</small></div>
+      <a class="btn" href="#" data-go="carrinho">Comprar</a>
+    </article>
+  </div>
+</section>
+
+<section id="busca" class="view">
+  <h2>Catalogo</h2>
+  <div class="search-layout" style="margin-top:20px">
+    <aside class="filters">
+      <h3>Categorias</h3>
+      <ul>
+        <li class="on" id="todos">Todos os produtos</li>
+        <li><a id="CPU">Processadores</a></li>
+        <li><a id="PV">Placas de vídeo</a></li>
+        <li><a id="MB">Placas-mãe</a></li>
+        <li><a id="RAM">Memória RAM</a></li>
+        <li><a id="SSD">SSD e HD</a></li>
+        <li><a id="FO">Fontes</a></li>
+        <li><a id="GA">Gabinetes</a></li>
+        <li><a id="CO">Coolers e water cooler</a></li>
+        <li><a id="PE">Periféricos</a></li>
+        <li><a id="MO">Monitores</a></li>
+      </ul>
+
+      <h3>Marca</h3>
+      <ul>
+        <li><label><input type="checkbox"> AMD</label></li>
+        <li><label><input type="checkbox"> Intel</label></li>
+        <li><label><input type="checkbox"> Nvidia</label></li>
+      </ul>
+
+      <h3>Preço</h3>
+      <label><input type="radio" name="p"> Até R$ 500</label>
+      <label><input type="radio" name="p"> R$ 500 a R$ 1.500</label>
+      <label><input type="radio" name="p"> R$ 1.500 a R$ 4.000</label>
+      <label><input type="radio" name="p"> Acima de R$ 4.000</label>
+    </aside>
+
+    <div>
+      <div class="results-head">
+        <span>30 produtos encontrados</span>
+        <select>
+          <option>Mais relevantes</option>
+          <option>Menor preço</option>
+          <option>Maior preço</option>
+          <option>Mais vendidos</option>
+        </select>
+      </div>
+      <div class="grid" id="resultados">
+        <article class="card"><div class="thumb">imagem</div>
+          <span class="tag">Categoria</span>
+          <h3>Nome do produto</h3>
+          <div class="price">R$ 0.000<small>à vista no Pix</small>
+          </div><a class="btn" href="#" data-go="carrinho">Comprar</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="carrinho" class="view">
+  <h2>Seu carrinho</h2>
+  <div class="cart-layout" style="margin-top:20px">
+  <div class="cart-item" id="itens-carrinho">
+  <div class="thumb"><img>
+  </div>
+  <div>
+    <h3>Nome</h3> 
+    <div class="meta">R$ preço unitário</div>
+    <div class="qty" id="contador-carrinho">
+      <button data-acao="diminuir" data-codigo="1001">−</button>
+      <span>1</span>
+      <button data-acao="aumentar" data-codigo="1001">+</button>
+    </div>
+  </div>
+  <div class="right">R$ subtotal<br><button data-acao="remover" data-codigo="1001">Remover</button></div>
+</div>
+
+    <aside class="summary">
+      <h3>Resumo</h3>
+      <div class="row"><span>Itens</span><span id="resumo-itens">0</span></div>
+      <div class="row"><span>Subtotal</span><span id="resumo-subtotal">R$ 0,00</span></div>
+      <div class="row"><span>Desconto</span><span id="resumo-desconto">R$ 0,00</span></div>
+      <div class="row total"><span>Total</span><span id="resumo-total">R$ 0,00</span></div>
+      <button class="btn" id="btn-finalizar">Finalizar compra</button>
+      <div class="coupon"><p style="color: #f1533c;">*Compras acima de R$ 1000 recebem R$ 100 off!</p></div>
+    </aside>
+  </div>
+</section>
+
+<section id="resumo" class="view">
+  <h2>Resumo da compra</h2>
+  <div class="cart-layout" style="margin-top:20px">
+    <div id="lista-resumo"></div>
+    <aside class="summary">
+      <h3>Valores</h3>
+      <div class="row"><span>Itens</span><span id="final-itens">0</span></div>
+      <div class="row"><span>Subtotal</span><span id="final-subtotal">R$ 0,00</span></div>
+      <div class="row"><span>Desconto</span><span id="final-desconto">R$ 0,00</span></div>
+      <div class="row total"><span>Valor final</span><span id="final-total">R$ 0,00</span></div>
+      <button class="btn" id="btn-confirmar">Confirmar compra</button>
+      <a class="btn ghost" href="#" data-go="carrinho">Voltar ao carrinho</a>
+    </aside>
+  </div>
+</section>
+
+<section id="sucesso" class="view">
+  <div class="done">
+    <div class="check">✓</div>
+    <h2>Pedido confirmado</h2>
+    <p>Enviamos os detalhes para o seu e-mail. Você acompanha o status pela sua conta.</p>
+    <div class="order-box">
+      <div class="row"><span>Número do pedido</span><span>#000000</span></div>
+      <div class="row"><span>Pagamento</span><span>Forma de pagamento</span></div>
+      <div class="row"><span>Entrega estimada</span><span>00/00</span></div>
+      <div class="row"><span>Endereço</span><span>Endereço de entrega</span></div>
+      <div class="order-box">
+      <div class="row total"><span>Total pago</span><span id="sucesso-total">R$ 0,00</span></div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="#" data-go="home">Continuar comprando</a>
+      <a class="btn ghost" href="#">Acompanhar pedido</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Gamer Zone</h4>
+        <ul>
+          <li><a href="#">Sobre a loja</a></li>
+          <li><a href="#">Nossas lojas físicas</a></li>
+          <li><a href="#">Trabalhe conosco</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ajuda</h4>
+        <ul>
+          <li><a href="#">Central de atendimento</a></li>
+          <li><a href="#">Prazos e fretes</a></li>
+          <li><a href="#">Trocas e devoluções</a></li>
+          <li><a href="#">Garantia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Termos de uso</a></li>
+          <li><a href="#">Segurança</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Receba as ofertas</h4>
+        <div class="coupon"><input placeholder="Seu e-mail"><button class="btn">Assinar</button></div>
+        <ul style="margin-top:14px"><li><a href="#">Instagram</a> · <a href="#">YouTube</a> · <a href="#">Discord</a></li></ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Gamer Zone Comércio de Informática LTDA · CNPJ 00.000.000/0001-00 · Endereço da empresa</span>
+      <span class="pay">Pagamento:<span>Pix</span><span>Boleto</span><span>Crédito</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

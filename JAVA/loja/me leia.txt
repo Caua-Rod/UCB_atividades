@@ -1,0 +1,5 @@
+## Para rodar
+1. Execute o script SQL.
+2. Ajuste usuário e senha (para o BD) em "src/main/resources/database.properties".
+3. Rode "mvn javafx:run" no terminal.
+4. Na aplicacao, entre com login padrão "admin" e senha "admin123". 

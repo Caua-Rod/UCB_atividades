@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.arenasports.controller.CategoriasController" spacing="20">
+
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Categorias" styleClass="titulo-pagina"/>
+        <TableView fx:id="tblCategorias" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colNome" text="Nome" prefWidth="450"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <VBox spacing="6" prefWidth="300" minWidth="300" maxHeight="-Infinity" styleClass="painel-formulario">
+        <Label fx:id="lblFormTitulo" text="Nova categoria" styleClass="subtitulo-pagina"/>
+
+        <Label text="Nome" styleClass="campo-label"/>
+        <TextField fx:id="txtNome"/>
+
+        <HBox spacing="8">
+            <padding><Insets top="12"/></padding>
+            <Button text="Salvar" onAction="#salvar" styleClass="botao-primario"/>
+            <Button text="Novo" onAction="#novo" styleClass="botao-neutro"/>
+            <Button fx:id="btnExcluir" text="Excluir" onAction="#excluir" styleClass="botao-perigo"/>
+        </HBox>
+    </VBox>
+</HBox>

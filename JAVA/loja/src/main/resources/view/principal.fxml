@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.arenasports.controller.PrincipalController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="barra-topo">
+            <Label text="ARENA SPORTS" styleClass="marca-topo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblUsuario" styleClass="usuario-topo"/>
+            <Button text="Sair" onAction="#sair" styleClass="botao-secundario"/>
+        </HBox>
+    </top>
+    <left>
+        <VBox spacing="6" prefWidth="200" styleClass="menu-lateral">
+            <Button text="Início" onAction="#abrirInicio" maxWidth="Infinity" styleClass="botao-menu"/>
+            <Button text="Produtos" onAction="#abrirProdutos" maxWidth="Infinity" styleClass="botao-menu"/>
+            <Button text="Categorias" onAction="#abrirCategorias" maxWidth="Infinity" styleClass="botao-menu"/>
+            <Button text="Clientes" onAction="#abrirClientes" maxWidth="Infinity" styleClass="botao-menu"/>
+            <Button text="Pedidos" onAction="#abrirPedidos" maxWidth="Infinity" styleClass="botao-menu"/>
+            <Button fx:id="btnUsuarios" text="Usuários" onAction="#abrirUsuarios" maxWidth="Infinity"
+                    styleClass="botao-menu"/>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="areaConteudo" styleClass="area-conteudo"/>
+    </center>
+</BorderPane>

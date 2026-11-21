@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="com.arenasports.controller.PedidosController" tabClosingPolicy="UNAVAILABLE">
+
+    <Tab text="Novo pedido">
+        <HBox spacing="20" styleClass="aba-conteudo">
+
+            <VBox spacing="8" HBox.hgrow="ALWAYS">
+                <Label text="Cliente" styleClass="campo-label"/>
+                <ComboBox fx:id="cmbCliente" maxWidth="Infinity" promptText="Selecione o cliente"/>
+
+                <HBox spacing="8" alignment="BOTTOM_LEFT">
+                    <padding><Insets top="6"/></padding>
+                    <VBox spacing="6" HBox.hgrow="ALWAYS">
+                        <Label text="Produto" styleClass="campo-label"/>
+                        <ComboBox fx:id="cmbProduto" maxWidth="Infinity" promptText="Selecione o produto"/>
+                    </VBox>
+                    <VBox spacing="6">
+                        <Label text="Qtd." styleClass="campo-label"/>
+                        <TextField fx:id="txtQuantidade" prefWidth="70"/>
+                    </VBox>
+                    <Button text="Adicionar item" onAction="#adicionarItem" styleClass="botao-primario"/>
+                </HBox>
+
+                <TableView fx:id="tblItens" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colItemProduto" text="Produto" prefWidth="260"/>
+                        <TableColumn fx:id="colItemQtd" text="Qtd." prefWidth="60"/>
+                        <TableColumn fx:id="colItemPreco" text="Preço unit." prefWidth="110"/>
+                        <TableColumn fx:id="colItemSubtotal" text="Subtotal" prefWidth="110"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <VBox spacing="10" prefWidth="250" minWidth="250" maxHeight="-Infinity" styleClass="painel-formulario">
+                <Label text="Resumo do pedido" styleClass="subtitulo-pagina"/>
+                <Label text="Total" styleClass="campo-label"/>
+                <Label fx:id="lblTotal" text="R$ 0,00" styleClass="total-pedido"/>
+                <Button text="Finalizar pedido" onAction="#finalizar" maxWidth="Infinity" styleClass="botao-primario">
+                    <VBox.margin><Insets top="10"/></VBox.margin>
+                </Button>
+                <Button text="Remover item selecionado" onAction="#removerItem" maxWidth="Infinity"
+                        styleClass="botao-neutro"/>
+                <Button text="Limpar pedido" onAction="#novoPedido" maxWidth="Infinity" styleClass="botao-neutro"/>
+            </VBox>
+        </HBox>
+    </Tab>
+
+    <Tab text="Histórico">
+        <VBox spacing="10" styleClass="aba-conteudo">
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Label text="Pedidos realizados" styleClass="subtitulo-pagina"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Atualizar" onAction="#atualizarHistorico" styleClass="botao-neutro"/>
+                <Button fx:id="btnCancelar" text="Cancelar pedido" onAction="#cancelarPedido"
+                        styleClass="botao-perigo"/>
+            </HBox>
+
+            <TableView fx:id="tblPedidos" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colNumero" text="Nº" prefWidth="60"/>
+                    <TableColumn fx:id="colData" text="Data" prefWidth="140"/>
+                    <TableColumn fx:id="colCliente" text="Cliente" prefWidth="220"/>
+                    <TableColumn fx:id="colAtendente" text="Atendente" prefWidth="180"/>
+                    <TableColumn fx:id="colTotal" text="Total" prefWidth="110"/>
+                </columns>
+            </TableView>
+
+            <Label text="Itens do pedido selecionado" styleClass="campo-label"/>
+            <TableView fx:id="tblDetalhe" prefHeight="180" minHeight="140">
+                <columns>
+                    <TableColumn fx:id="colDetProduto" text="Produto" prefWidth="260"/>
+                    <TableColumn fx:id="colDetQtd" text="Qtd." prefWidth="60"/>
+                    <TableColumn fx:id="colDetPreco" text="Preço unit." prefWidth="110"/>
+                    <TableColumn fx:id="colDetSubtotal" text="Subtotal" prefWidth="110"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </Tab>
+</TabPane>

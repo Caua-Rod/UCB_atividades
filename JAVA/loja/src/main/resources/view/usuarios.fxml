@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.arenasports.controller.UsuariosController" spacing="20">
+
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Usuários" styleClass="titulo-pagina"/>
+        <TableView fx:id="tblUsuarios" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colNome" text="Nome" prefWidth="220"/>
+                <TableColumn fx:id="colLogin" text="Login" prefWidth="140"/>
+                <TableColumn fx:id="colPerfil" text="Perfil" prefWidth="130"/>
+                <TableColumn fx:id="colAtivo" text="Ativo" prefWidth="70"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <VBox spacing="6" prefWidth="300" minWidth="300" maxHeight="-Infinity" styleClass="painel-formulario">
+        <Label fx:id="lblFormTitulo" text="Novo usuário" styleClass="subtitulo-pagina"/>
+
+        <Label text="Nome" styleClass="campo-label"/>
+        <TextField fx:id="txtNome"/>
+
+        <Label text="Telefone" styleClass="campo-label"/>
+        <TextField fx:id="txtTelefone" promptText="(61) 99999-9999"/>
+
+        <Label text="Login" styleClass="campo-label"/>
+        <TextField fx:id="txtLogin" promptText="letras, números, . ou _"/>
+
+        <Label fx:id="lblSenha" text="Senha" styleClass="campo-label" wrapText="true"/>
+        <PasswordField fx:id="txtSenha" promptText="mínimo 6 caracteres"/>
+
+        <Label text="Perfil" styleClass="campo-label"/>
+        <ComboBox fx:id="cmbPerfil" maxWidth="Infinity"/>
+
+        <CheckBox fx:id="chkAtivo" text="Usuário ativo" selected="true">
+            <VBox.margin><Insets top="6"/></VBox.margin>
+        </CheckBox>
+
+        <HBox spacing="8">
+            <padding><Insets top="12"/></padding>
+            <Button text="Salvar" onAction="#salvar" styleClass="botao-primario"/>
+            <Button text="Novo" onAction="#novo" styleClass="botao-neutro"/>
+            <Button text="Excluir" onAction="#excluir" styleClass="botao-perigo"/>
+        </HBox>
+    </VBox>
+</HBox>

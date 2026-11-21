@@ -1,0 +1,186 @@
+.root {
+    -cor-primaria: #16a34a;
+    -cor-primaria-escura: #15803d;
+    -cor-fundo: #f1f5f9;
+    -cor-menu: #0f172a;
+    -cor-menu-claro: #1e293b;
+    -cor-texto: #1e293b;
+    -cor-perigo: #dc2626;
+    -fx-font-family: "Segoe UI", "Arial";
+    -fx-font-size: 14px;
+}
+
+.tela-login {
+    -fx-background-color: -cor-menu;
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 32;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 20, 0.2, 0, 4);
+}
+
+.titulo-marca {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -cor-primaria;
+}
+
+.subtitulo {
+    -fx-text-fill: #64748b;
+}
+
+.campo-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: -cor-texto;
+}
+
+.text-field, .password-field, .combo-box, .text-area {
+    -fx-background-color: white;
+    -fx-background-radius: 6;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6;
+    -fx-padding: 6 8 6 8;
+}
+
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-border-color: -cor-primaria;
+}
+
+.botao-primario {
+    -fx-background-color: -cor-primaria;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 9 18 9 18;
+    -fx-cursor: hand;
+}
+
+.botao-primario:hover {
+    -fx-background-color: -cor-primaria-escura;
+}
+
+.botao-secundario {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: #94a3b8;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 14 6 14;
+    -fx-cursor: hand;
+}
+
+.botao-secundario:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+}
+
+.botao-perigo {
+    -fx-background-color: -cor-perigo;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 9 18 9 18;
+    -fx-cursor: hand;
+}
+
+.barra-topo {
+    -fx-background-color: -cor-menu;
+    -fx-padding: 12 20 12 20;
+}
+
+.marca-topo {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -cor-primaria;
+}
+
+.usuario-topo {
+    -fx-text-fill: #e2e8f0;
+}
+
+.menu-lateral {
+    -fx-background-color: -cor-menu-claro;
+    -fx-padding: 16 12 16 12;
+}
+
+.botao-menu {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e2e8f0;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 14 10 14;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.botao-menu:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+}
+
+.botao-menu:focused {
+    -fx-background-color: rgba(22, 163, 74, 0.30);
+}
+
+.area-conteudo {
+    -fx-background-color: -cor-fundo;
+    -fx-padding: 24;
+}
+
+.titulo-pagina {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -cor-texto;
+}
+
+.subtitulo-pagina {
+    -fx-font-size: 16px;
+    -fx-text-fill: #64748b;
+}
+
+.table-view, .list-view {
+    -fx-background-radius: 8;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 8;
+}
+
+.painel-formulario {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 18;
+}
+
+.botao-neutro {
+    -fx-background-color: white;
+    -fx-text-fill: -cor-texto;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 9 18 9 18;
+    -fx-cursor: hand;
+}
+
+.botao-neutro:hover {
+    -fx-background-color: #f1f5f9;
+}
+
+.table-row-cell.linha-estoque-baixo {
+    -fx-background-color: #fee2e2;
+}
+
+.table-row-cell.linha-estoque-baixo:selected {
+    -fx-background-color: #fca5a5;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: -cor-fundo;
+}
+
+.aba-conteudo {
+    -fx-padding: 16;
+}
+
+.total-pedido {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -cor-primaria;
+}

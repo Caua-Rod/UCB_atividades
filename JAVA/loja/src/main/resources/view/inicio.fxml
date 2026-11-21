@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.arenasports.controller.InicioController" spacing="10">
+    <Label fx:id="lblBoasVindas" styleClass="titulo-pagina"/>
+    <Label text="Produtos com estoque baixo" styleClass="subtitulo-pagina"/>
+    <ListView fx:id="lstEstoqueBaixo" VBox.vgrow="ALWAYS"/>
+</VBox>

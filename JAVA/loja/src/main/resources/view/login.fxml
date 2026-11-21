@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.arenasports.controller.LoginController" styleClass="tela-login">
+    <VBox alignment="CENTER_LEFT" spacing="8" maxWidth="340" maxHeight="-Infinity" styleClass="card">
+        <Label text="ARENA SPORTS" styleClass="titulo-marca"/>
+        <Label text="Entre para continuar" styleClass="subtitulo"/>
+
+        <Label text="Login" styleClass="campo-label">
+            <VBox.margin><Insets top="16"/></VBox.margin>
+        </Label>
+        <TextField fx:id="txtLogin" promptText="Digite seu login"/>
+
+        <Label text="Senha" styleClass="campo-label">
+            <VBox.margin><Insets top="6"/></VBox.margin>
+        </Label>
+        <PasswordField fx:id="txtSenha" promptText="Digite sua senha" onAction="#entrar"/>
+
+        <Button text="Entrar" defaultButton="true" maxWidth="Infinity" onAction="#entrar"
+                styleClass="botao-primario">
+            <VBox.margin><Insets top="18"/></VBox.margin>
+        </Button>
+    </VBox>
+</StackPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.arenasports.controller.ClientesController" spacing="20">
+
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Clientes" styleClass="titulo-pagina"/>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <TextField fx:id="txtBusca" promptText="Buscar por nome" HBox.hgrow="ALWAYS" onAction="#buscar"/>
+            <Button text="Buscar" onAction="#buscar" styleClass="botao-primario"/>
+            <Button text="Limpar" onAction="#limparBusca" styleClass="botao-neutro"/>
+        </HBox>
+        <TableView fx:id="tblClientes" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colNome" text="Nome" prefWidth="240"/>
+                <TableColumn fx:id="colTelefone" text="Telefone" prefWidth="140"/>
+                <TableColumn fx:id="colEmail" text="E-mail" prefWidth="230"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <VBox spacing="6" prefWidth="300" minWidth="300" maxHeight="-Infinity" styleClass="painel-formulario">
+        <Label fx:id="lblFormTitulo" text="Novo cliente" styleClass="subtitulo-pagina"/>
+
+        <Label text="Nome" styleClass="campo-label"/>
+        <TextField fx:id="txtNome"/>
+
+        <Label text="Telefone" styleClass="campo-label"/>
+        <TextField fx:id="txtTelefone" promptText="(61) 99999-9999"/>
+
+        <Label text="E-mail" styleClass="campo-label"/>
+        <TextField fx:id="txtEmail" promptText="nome@email.com"/>
+
+        <HBox spacing="8">
+            <padding><Insets top="12"/></padding>
+            <Button text="Salvar" onAction="#salvar" styleClass="botao-primario"/>
+            <Button text="Novo" onAction="#novo" styleClass="botao-neutro"/>
+            <Button fx:id="btnExcluir" text="Excluir" onAction="#excluir" styleClass="botao-perigo"/>
+        </HBox>
+    </VBox>
+</HBox>

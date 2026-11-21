@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.arenasports.controller.ProdutosController" spacing="20">
+
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Produtos" styleClass="titulo-pagina"/>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <TextField fx:id="txtBusca" promptText="Buscar por nome" HBox.hgrow="ALWAYS" onAction="#buscar"/>
+            <Button text="Buscar" onAction="#buscar" styleClass="botao-primario"/>
+            <Button text="Limpar" onAction="#limparBusca" styleClass="botao-neutro"/>
+        </HBox>
+        <TableView fx:id="tblProdutos" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colNome" text="Nome" prefWidth="230"/>
+                <TableColumn fx:id="colCategoria" text="Categoria" prefWidth="110"/>
+                <TableColumn fx:id="colPreco" text="Preço" prefWidth="100"/>
+                <TableColumn fx:id="colEstoque" text="Estoque" prefWidth="70"/>
+                <TableColumn fx:id="colCodigo" text="Código de barras" prefWidth="140"/>
+            </columns>
+        </TableView>
+        <Label text="Linhas em vermelho claro: estoque baixo." styleClass="subtitulo"/>
+    </VBox>
+
+    <VBox spacing="6" prefWidth="300" minWidth="300" maxHeight="-Infinity" styleClass="painel-formulario">
+        <Label fx:id="lblFormTitulo" text="Novo produto" styleClass="subtitulo-pagina"/>
+
+        <Label text="Nome" styleClass="campo-label"/>
+        <TextField fx:id="txtNome"/>
+
+        <Label text="Descrição" styleClass="campo-label"/>
+        <TextField fx:id="txtDescricao"/>
+
+        <Label text="Categoria" styleClass="campo-label"/>
+        <ComboBox fx:id="cmbCategoria" maxWidth="Infinity" promptText="Selecione"/>
+
+        <HBox spacing="10">
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Preço (R$)" styleClass="campo-label"/>
+                <TextField fx:id="txtPreco" promptText="0,00"/>
+            </VBox>
+            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                <Label text="Estoque" styleClass="campo-label"/>
+                <TextField fx:id="txtEstoque" promptText="0"/>
+            </VBox>
+        </HBox>
+
+        <Label text="Código de barras" styleClass="campo-label"/>
+        <TextField fx:id="txtCodigo" promptText="8 a 18 números"/>
+
+        <HBox spacing="8">
+            <padding><Insets top="12"/></padding>
+            <Button text="Salvar" onAction="#salvar" styleClass="botao-primario"/>
+            <Button text="Novo" onAction="#novo" styleClass="botao-neutro"/>
+            <Button fx:id="btnExcluir" text="Excluir" onAction="#excluir" styleClass="botao-perigo"/>
+        </HBox>
+    </VBox>
+</HBox>
